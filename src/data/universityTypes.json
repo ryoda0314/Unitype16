@@ -1,0 +1,114 @@
+{
+    "MACI": {
+        "name": "京大生",
+        "desc": "尖りを磨く探究（仮説駆動）",
+        "stereotype": "常識の外から本質を掴みにいく、自由な探究派。\n正解より「新しい見方」に惹かれ、道草も厭わない。\n独自理論で一気に抜く瞬間がある。",
+        "image": "/assets/characters/MACI_kyodai.jpg",
+        "color": "bg-emerald-500"
+    },
+    "MACN": {
+        "name": "阪大生",
+        "desc": "勝ち筋ドライバー（攻め設計）",
+        "stereotype": "総合力で外さない、バランス型の優等生。\n尖りより「落とさない設計」で信頼を積む。\n広い守備範囲で、地力が出る。",
+        "image": "/assets/characters/MACN_osaka.jpg",
+        "color": "bg-teal-500"
+    },
+    "MAUI": {
+        "name": "東工大生",
+        "desc": "実験実装（作って確かめる）",
+        "stereotype": "合理と検証で積み上げる、集中型の実装派。\n会話は省エネでも、課題に刺さると深く潜る。\n難題を分解して、動く形に落とすのが強い。",
+        "image": "/assets/characters/MAUI_titech.jpg",
+        "color": "bg-cyan-500"
+    },
+    "MAUN": {
+        "name": "北大生",
+        "desc": "探索リーダー（現場で広げる）",
+        "stereotype": "のびのびして見えて芯がある、余裕型の実力者。\n急がないが、折れない。自然体で続ける。\n環境も味方にして、地力で勝つ。",
+        "image": "/assets/characters/MAUN_hokudai.jpg",
+        "color": "bg-sky-500"
+    },
+    "MSCI": {
+        "name": "東大生",
+        "desc": "静かな最適化（戦略設計）",
+        "stereotype": "理屈で王道の正解ルートを固める、静かな個人戦。\n評価基準が高く、雑談より成果で会話しやすい。\n最短で勝てる形を作るのが得意。",
+        "image": "/assets/characters/MSCI_todai.jpg",
+        "color": "bg-blue-600"
+    },
+    "MSCN": {
+        "name": "一橋生",
+        "desc": "合意で実装（正しさを通す）",
+        "stereotype": "制度と現実の間で勝ち筋を設計する、堅実な戦略家。\n派手さより整合性、言い切れる根拠を重視する。\n説明可能な強さで、最後に取り切る。",
+        "image": "/assets/characters/MSCN_hitotsubashi.jpg",
+        "color": "bg-indigo-600"
+    },
+    "MSUI": {
+        "name": "名大生",
+        "desc": "堅牢ビルダー（壊れない前進）",
+        "stereotype": "堅実に強い、基盤を固める積み上げ派。\n派手に語らず、手元の精度で勝負する。\nコツコツ詰めて、気づけば強い。",
+        "image": "/assets/characters/MSUI_nagoya.jpg",
+        "color": "bg-violet-600"
+    },
+    "MSUN": {
+        "name": "東北大生",
+        "desc": "安定推進（運用で勝つ）",
+        "stereotype": "腰を据えて磨き続ける、研究ドリブンの努力家。\n短期のノリより、再現性と改良の積み重ね。\n長期戦で強さが伸びるタイプ。",
+        "image": "/assets/characters/MSUN_tohoku.jpg",
+        "color": "bg-purple-600"
+    },
+    "PACI": {
+        "name": "同志社生",
+        "desc": "信念ムーブメント（意味で走る）",
+        "stereotype": "落ち着きと品で信頼を積む、正攻法の堅実派。\n派手に振らず、筋の通った選択を好む。\n崩れにくい強さで安定している。",
+        "image": "/assets/characters/PACI_doshisha.jpg",
+        "color": "bg-fuchsia-600"
+    },
+    "PACN": {
+        "name": "早稲田生",
+        "desc": "点火と接続（発想ドライブ）",
+        "stereotype": "まず動いてチャンスを増やす、場づくりの行動派。\n人と企画で流れを作り、経験値で伸びる。\n熱量と回転数で、結果を取りにいく。",
+        "image": "/assets/characters/PACN_waseda.jpg",
+        "color": "bg-rose-500"
+    },
+    "PAUI": {
+        "name": "筑波生",
+        "desc": "越境プロトタイパー（試して更新）",
+        "stereotype": "拠点の広さみたいに守備範囲が広い、総合派。\n研究も実務も淡々と回し、分散して強い。\n基礎体力が高く、伸びしろも大きい。",
+        "image": "/assets/characters/PAUI_tsukuba.jpg",
+        "color": "bg-orange-500"
+    },
+    "PAUN": {
+        "name": "明治生",
+        "desc": "突破アクション（勢いで動かす）",
+        "stereotype": "規模と活気で前に進む、現場型の推進派。\n理屈よりまず手を動かし、回しながら固める。\n体力と継続で、最後に勝つ。",
+        "image": "/assets/characters/PAUN_meiji.jpg",
+        "color": "bg-amber-500"
+    },
+    "PSCI": {
+        "name": "立教生",
+        "desc": "思考編集者（丁寧に整える）",
+        "stereotype": "空気を整えてチームを回す、静かな調整役。\n強く押さず、でも要点は外さない。\nじわっと効く完成度で勝てる。",
+        "image": "/assets/characters/PSCI_rikkyo.jpg",
+        "color": "bg-yellow-500"
+    },
+    "PSCN": {
+        "name": "上智生",
+        "desc": "翻訳ブリッジ（違いを繋ぐ）",
+        "stereotype": "語学と国際感で視野を広げる、整った対話派。\n丁寧さが武器で、雑さや押しの強さは苦手寄り。\n距離感を保ちつつ、確実に前へ進める。",
+        "image": "/assets/characters/PSCN_sophia.jpg",
+        "color": "bg-lime-500"
+    },
+    "PSUI": {
+        "name": "青学生",
+        "desc": "整流クラフター（整えて仕上げる）",
+        "stereotype": "見せ方まで設計する、都市型の洗練派。\n軽やかに見えて、要所はきっちり外さない。\n空気と印象を味方にして強い。",
+        "image": "/assets/characters/PSUI_aogaku.jpg",
+        "color": "bg-green-500"
+    },
+    "PSUN": {
+        "name": "慶應生",
+        "desc": "運用プロデュース（空気×成果）",
+        "stereotype": "資源とネットワークで勝ち筋を太くする、現実派。\n議論はスマート、意思決定は速い。\n「通す力」を含めて成果にする。",
+        "image": "/assets/characters/PSUN_keio.jpg",
+        "color": "bg-emerald-600"
+    }
+}
