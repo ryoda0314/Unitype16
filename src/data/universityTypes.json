@@ -35,7 +35,7 @@
         "color": "bg-blue-600"
     },
     "MSCN": {
-        "name": "一橋生",
+        "name": "一橋大生",
         "desc": "合意で実装（正しさを通す）",
         "stereotype": "制度と現実の間で勝ち筋を設計する、堅実な戦略家。\n派手さより整合性、言い切れる根拠を重視する。\n説明可能な強さで、最後に取り切る。",
         "image": "/assets/characters/MSCN_hitotsubashi.jpg",
@@ -56,56 +56,56 @@
         "color": "bg-purple-600"
     },
     "PACI": {
-        "name": "同志社生",
+        "name": "同志社大生",
         "desc": "信念ムーブメント（意味で走る）",
         "stereotype": "落ち着きと品で信頼を積む、正攻法の堅実派。\n派手に振らず、筋の通った選択を好む。\n崩れにくい強さで安定している。",
         "image": "/assets/characters/PACI_doshisha.jpg",
         "color": "bg-fuchsia-600"
     },
     "PACN": {
-        "name": "早稲田生",
+        "name": "早稲田大生",
         "desc": "点火と接続（発想ドライブ）",
         "stereotype": "まず動いてチャンスを増やす、場づくりの行動派。\n人と企画で流れを作り、経験値で伸びる。\n熱量と回転数で、結果を取りにいく。",
         "image": "/assets/characters/PACN_waseda.jpg",
         "color": "bg-rose-500"
     },
     "PAUI": {
-        "name": "筑波生",
+        "name": "筑波大生",
         "desc": "越境プロトタイパー（試して更新）",
         "stereotype": "拠点の広さみたいに守備範囲が広い、総合派。\n研究も実務も淡々と回し、分散して強い。\n基礎体力が高く、伸びしろも大きい。",
         "image": "/assets/characters/PAUI_tsukuba.jpg",
         "color": "bg-orange-500"
     },
     "PAUN": {
-        "name": "明治生",
+        "name": "明治大生",
         "desc": "突破アクション（勢いで動かす）",
         "stereotype": "規模と活気で前に進む、現場型の推進派。\n理屈よりまず手を動かし、回しながら固める。\n体力と継続で、最後に勝つ。",
         "image": "/assets/characters/PAUN_meiji.jpg",
         "color": "bg-amber-500"
     },
     "PSCI": {
-        "name": "立教生",
+        "name": "立教大生",
         "desc": "思考編集者（丁寧に整える）",
         "stereotype": "空気を整えてチームを回す、静かな調整役。\n強く押さず、でも要点は外さない。\nじわっと効く完成度で勝てる。",
         "image": "/assets/characters/PSCI_rikkyo.jpg",
         "color": "bg-yellow-500"
     },
     "PSCN": {
-        "name": "上智生",
+        "name": "上智大生",
         "desc": "翻訳ブリッジ（違いを繋ぐ）",
         "stereotype": "語学と国際感で視野を広げる、整った対話派。\n丁寧さが武器で、雑さや押しの強さは苦手寄り。\n距離感を保ちつつ、確実に前へ進める。",
         "image": "/assets/characters/PSCN_sophia.jpg",
         "color": "bg-lime-500"
     },
     "PSUI": {
-        "name": "青学生",
+        "name": "青山学院大生",
         "desc": "整流クラフター（整えて仕上げる）",
         "stereotype": "見せ方まで設計する、都市型の洗練派。\n軽やかに見えて、要所はきっちり外さない。\n空気と印象を味方にして強い。",
         "image": "/assets/characters/PSUI_aogaku.jpg",
         "color": "bg-green-500"
     },
     "PSUN": {
-        "name": "慶應生",
+        "name": "慶應大生",
         "desc": "運用プロデュース（空気×成果）",
         "stereotype": "資源とネットワークで勝ち筋を太くする、現実派。\n議論はスマート、意思決定は速い。\n「通す力」を含めて成果にする。",
         "image": "/assets/characters/PSUN_keio.jpg",
