@@ -13,14 +13,19 @@ export function Header({ onOpenTypeLibrary, onOpenCompatibility, onGoHome }: Hea
         <motion.header
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className="fixed top-0 left-0 right-0 h-16 bg-white/80 backdrop-blur-md border-b border-slate-200 z-40 flex items-center justify-between px-4 lg:px-8 shadow-sm"
+            className="fixed top-0 left-0 right-0 h-28 bg-white/80 backdrop-blur-md border-b border-slate-200 z-40 flex items-center justify-between px-4 lg:px-8 shadow-sm"
         >
             <button
                 onClick={onGoHome}
-                className="flex items-center gap-2 hover:opacity-70 transition-opacity"
+                className="flex items-center gap-4 hover:opacity-70 transition-opacity"
             >
-                <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                    UniType16
+                <img
+                    src="/assets/logo_header.png"
+                    alt="UniType16 Logo"
+                    className="h-20 w-auto object-contain hover:scale-105 transition-transform translate-y-2"
+                />
+                <span className="text-4xl font-black text-slate-800 tracking-tight font-sans">
+                    UniType<span className="text-indigo-600">16</span>
                 </span>
             </button>
 

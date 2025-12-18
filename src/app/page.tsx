@@ -207,12 +207,9 @@ export default function Home() {
               <div className="mb-8 relative w-full max-w-lg aspect-video">
                 {/* Placeholder for Illustration - You need to add the image file */}
                 <img
-                  src="/assets/hero_illustration_v2.png"
+                  src="/assets/illustration_study.png"
                   alt="University Life"
                   className="w-full h-full object-contain drop-shadow-xl"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://placehold.co/600x400/indigo/white?text=UniType16";
-                  }}
                 />
               </div>
 
@@ -256,7 +253,7 @@ export default function Home() {
           <main className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8" key="quiz">
             <div className="max-w-3xl mx-auto space-y-8">
               <div className="text-center mb-12">
-                <h1 className="text-2xl font-bold text-gray-800 tracking-tight">University Label Diagnosis</h1>
+                <h1 className="text-3xl font-serif font-bold text-slate-800 tracking-wider">University Label Diagnosis</h1>
                 <p className="mt-2 text-gray-500 text-sm font-medium">
                   {currentStep + 1} / {totalSteps} ステップ
                 </p>

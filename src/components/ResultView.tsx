@@ -168,35 +168,45 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                     className="space-y-24"
                 >
                     {/* Scene & Tagline */}
-                    <div className="bg-gradient-to-b from-white to-slate-50 rounded-[2.5rem] p-10 md:p-16 shadow-xl shadow-slate-200/50 border border-slate-100">
-                        <div className="text-center max-w-3xl mx-auto">
-                            <h3 className="text-3xl font-bold text-slate-900 mb-8 leading-snug">{description.tagline}</h3>
-                            <div className="relative">
-                                <span className="absolute -top-6 -left-4 text-6xl text-indigo-100 font-serif">“</span>
-                                <p className="text-xl text-slate-600 leading-relaxed italic relative z-10 px-8">
-                                    {description.scene}
-                                </p>
-                                <span className="absolute -bottom-12 -right-4 text-6xl text-indigo-100 font-serif">”</span>
-                            </div>
-                        </div>
+                    <div className="relative">
+                        <img
+                            src="/assets/illustration_relax.png"
+                            alt="Relaxing"
+                            className="absolute -top-24 -right-4 w-32 md:w-48 opacity-90 rotate-3 z-10 drop-shadow-lg"
+                        />
+                        <div className="bg-gradient-to-b from-white to-slate-50 rounded-[2.5rem] p-10 md:p-16 shadow-xl shadow-slate-200/50 border border-slate-100 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50/50 rounded-bl-full -z-10" />
 
-                        <div className="mt-16 pt-16 border-t border-slate-200/60 max-w-4xl mx-auto">
-                            <div className="text-center mb-10">
-                                <h4 className="inline-block px-4 py-1.5 bg-slate-900 text-white rounded-full text-sm font-bold tracking-widest uppercase mb-4">Core Drivers</h4>
-                                <h2 className="text-2xl font-bold text-slate-900">思考の原点</h2>
+                            <div className="text-center max-w-3xl mx-auto">
+                                <h3 className="text-3xl font-bold text-slate-900 mb-8 leading-snug">{description.tagline}</h3>
+                                <div className="relative">
+                                    <span className="absolute -top-6 -left-4 text-6xl text-indigo-100 font-serif">“</span>
+                                    <p className="text-xl text-slate-600 leading-relaxed italic relative z-10 px-8">
+                                        {description.scene}
+                                    </p>
+                                    <span className="absolute -bottom-12 -right-4 text-6xl text-indigo-100 font-serif">”</span>
+                                </div>
                             </div>
-                            <div className="grid md:grid-cols-2 gap-6">
-                                {description.coreAxis.map((axis, i) => (
-                                    <div key={i} className="flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                                        <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 text-indigo-600 font-bold border border-indigo-100">
-                                            {i + 1}
+
+                            <div className="mt-16 pt-16 border-t border-slate-200/60 max-w-4xl mx-auto">
+                                <div className="text-center mb-10">
+                                    <h4 className="inline-block px-4 py-1.5 bg-slate-900 text-white rounded-full text-sm font-bold tracking-widest uppercase mb-4">Core Drivers</h4>
+                                    <h2 className="text-2xl font-bold text-slate-900">思考の原点</h2>
+                                </div>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    {description.coreAxis.map((axis, i) => (
+                                        <div key={i} className="flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                                            <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 text-indigo-600 font-bold border border-indigo-100">
+                                                {i + 1}
+                                            </div>
+                                            <span className="text-slate-700 font-medium pt-1 leading-relaxed">{axis}</span>
                                         </div>
-                                        <span className="text-slate-700 font-medium pt-1 leading-relaxed">{axis}</span>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
+
 
                     {/* Overview */}
                     <div className="max-w-4xl mx-auto prose prose-lg prose-slate text-justify md:text-center leading-loose text-slate-600">
@@ -319,7 +329,12 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
 
             {/* Compatibility Sections */}
             <div className="space-y-16">
-                <div className="text-center">
+                <div className="text-center relative">
+                    <img
+                        src="/assets/illustration_chat.png"
+                        alt="Campus Chat"
+                        className="absolute -top-20 left-4 md:left-20 w-28 md:w-40 -rotate-6 opacity-90 drop-shadow-lg"
+                    />
                     <h2 className="text-3xl font-bold text-slate-900 mb-4">相性分析</h2>
                     <p className="text-slate-500">あなたと他のタイプとの化学反応</p>
                 </div>
@@ -378,6 +393,23 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                     <span className="relative z-10 text-lg tracking-wide">もう一度診断する</span>
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-[length:200%_auto] animate-gradient" />
                 </button>
+
+                <div className="mt-12 flex justify-center">
+                    <button
+                        onClick={() => {
+                            const shareUrl = `${window.location.origin}/share/${typeCode}`;
+                            const text = `私の性格タイプは【${uni?.name}】でした！\n\n${description?.tagline}\n\n#UniType16 #大学診断`;
+                            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`;
+                            window.open(twitterUrl, '_blank');
+                        }}
+                        className="flex items-center gap-3 px-8 py-4 bg-black text-white rounded-full font-bold shadow-lg hover:bg-slate-800 transition-transform hover:-translate-y-1"
+                    >
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                        <span>結果をXでシェア</span>
+                    </button>
+                </div>
             </div>
 
             {/* DEBUG PANEL */}
