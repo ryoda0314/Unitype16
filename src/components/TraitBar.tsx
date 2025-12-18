@@ -23,7 +23,14 @@ export function TraitBar({
     const position = ((clampedScore + 3) / 6) * 100;
 
     // Percentages for display
-    const pctRight = Math.round(position);
+    let pctRight = Math.round(position);
+
+    // Force bias if 50% (User req: "Bias to one side if 50%")
+    // Matching scoring.ts logic where >= 0 is Right Side, we bias to 51% Right.
+    if (pctRight === 50) {
+        pctRight = 51;
+    }
+
     const pctLeft = 100 - pctRight;
 
     // Determination
@@ -63,13 +70,13 @@ export function TraitBar({
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 1.2, duration: 0.5 }}
-                        className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 whitespace-nowrap flex flex-col items-center"
+                        className="absolute bottom-full mb-1 md:mb-3 left-1/2 -translate-x-1/2 whitespace-nowrap flex flex-col items-center"
                     >
                         <span className={`text-[10px] md:text-lg font-bold text-slate-700 drop-shadow-sm`}>
                             {dominantPct}% {dominantLabel.includes('：') ? dominantLabel.split('：')[1] : dominantLabel}
                         </span>
                         {/* Down Arrow/Caret */}
-                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-slate-700 opacity-20 mt-1" />
+                        <div className="w-0 h-0 border-l-[4px] md:border-l-[6px] border-l-transparent border-r-[4px] md:border-r-[6px] border-r-transparent border-t-[6px] md:border-t-[8px] border-t-slate-700 opacity-20 mt-0.5 md:mt-1" />
                     </motion.div>
 
                     {/* Cursor Circle */}

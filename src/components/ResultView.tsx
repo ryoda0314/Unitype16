@@ -19,9 +19,7 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
     const axesConfig = (config as any).axesForResult;
     const description = typeDescriptions[typeCode];
 
-    // DEBUG: Log scores to console
-    console.log("[ResultView] Received scores:", scores);
-    console.log("[ResultView] Determined type:", typeCode);
+
 
     return (
         <div className="max-w-5xl mx-auto py-16 px-6 space-y-24 font-sans text-slate-800">
@@ -417,19 +415,7 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                 </button>
             </div>
 
-            {/* DEBUG PANEL */}
-            <div className="fixed bottom-4 right-4 bg-black/90 text-white p-4 rounded-lg text-xs font-mono max-w-xs z-50">
-                <div className="font-bold text-yellow-400 mb-2">DEBUG: Raw Scores</div>
-                {Object.entries(scores).map(([axis, value]) => (
-                    <div key={axis} className="flex justify-between">
-                        <span>{axis}:</span>
-                        <span className={value === 0 ? "text-red-400" : "text-green-400"}>{typeof value === 'number' ? value.toFixed(2) : 'undefined'}</span>
-                    </div>
-                ))}
-                <div className="mt-2 pt-2 border-t border-white/30">
-                    <span className="text-yellow-400">Type: </span>{typeCode}
-                </div>
-            </div>
+
         </div >
     );
 }
