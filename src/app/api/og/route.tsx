@@ -5,8 +5,6 @@ import { typeDescriptions } from '@/data/typeDescriptions';
 
 export const runtime = 'edge';
 
-// Simple mapping from Tailwind classes used in universityTypes.json to Hex codes
-// Used because Satori (ImageResponse) doesn't resolve Tailwind classes automatically without setup.
 const colorMap: Record<string, string> = {
     "bg-emerald-500": "#10b981",
     "bg-teal-500": "#14b8a6",
@@ -37,7 +35,7 @@ export async function GET(req: NextRequest) {
 
         const uniData = universityTypes[type as keyof typeof universityTypes];
         const descData = typeDescriptions[type as keyof typeof typeDescriptions];
-        const bgColor = colorMap[uniData.color] || '#4f46e5'; // Default indigo
+        const bgColor = colorMap[uniData.color] || '#4f46e5';
 
         const origin = process.env.NEXT_PUBLIC_SITE_URL || new URL(req.url).origin;
         const characterImageUrl = `${origin}${uniData.image}`;
@@ -49,93 +47,132 @@ export async function GET(req: NextRequest) {
                         display: 'flex',
                         width: '100%',
                         height: '100%',
-                        backgroundColor: '#f8fafc', // slate-50
+                        backgroundColor: '#f8fafc',
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontFamily: '"Noto Sans JP", sans-serif',
                     }}
                 >
-                    {/* Card Container */}
+                    {/* Main Container - Matches ResultView Hero */}
                     <div
                         style={{
                             display: 'flex',
-                            width: '90%',
-                            height: '85%',
+                            width: '95%',
+                            height: '90%',
                             backgroundColor: 'white',
-                            borderRadius: '50px',
+                            borderRadius: '60px',
                             overflow: 'hidden',
-                            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                            boxShadow: '0 40px 80px -20px rgba(0, 0, 0, 0.2)',
+                            position: 'relative',
                         }}
                     >
-                        {/* Left Side: Text */}
+                        {/* Colored Background Shape (Right Side) */}
                         <div
                             style={{
-                                flex: '1.3',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                padding: '60px',
-                                backgroundColor: '#ffffff',
-                                position: 'relative',
-                            }}
-                        >
-                            <div style={{ fontSize: 24, fontWeight: 'bold', color: '#64748b', marginBottom: 16, letterSpacing: '0.05em' }}>
-                                あなたの性格タイプ
-                            </div>
-                            <div style={{ fontSize: 96, fontWeight: 900, color: '#1e293b', lineHeight: 1, marginBottom: 16 }}>
-                                {uniData.name}
-                            </div>
-                            <div style={{ fontSize: 48, fontWeight: 'bold', color: '#94a3b8', marginBottom: 48 }}>
-                                {type}
-                            </div>
-
-                            <div style={{ fontSize: 32, fontWeight: 'bold', color: '#334155', lineHeight: 1.4, marginBottom: 24 }}>
-                                {uniData.stereotype}
-                            </div>
-
-                            <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center' }}>
-                                <div style={{ fontSize: 24, color: '#cbd5e1', fontWeight: 'bold' }}>
-                                    #UniType16
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Right Side: Image with Background */}
-                        <div
-                            style={{
-                                flex: '1',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                                width: '55%',
+                                height: '100%',
                                 backgroundColor: bgColor,
-                                position: 'relative',
+                                // Satori doesn't support complex clip-path polygon perfectly, 
+                                // using a slanted transform or just a straight angle is safer.
+                                // Let's try a simple skewed separator approach or just a rect for now to be safe, 
+                                // but User liked the diagonal in ResultView.
+                                // We'll try to visually mimic it with a rotated white blocker if needed, 
+                                // but a straight colored block is cleaner for OG if clip-path fails.
+                                // Let's try Satori's polygon if possible, or just a rotated div.
+                                clipPath: 'polygon(20% 0%, 100% 0, 100% 100%, 0% 100%)', // Try this, commonly supported in newer Satori
                             }}
-                        >
-                            {/* Slanted Separator Effect */}
+                        />
+
+                        {/* Content Wrapper */}
+                        <div style={{ display: 'flex', width: '100%', height: '100%', position: 'relative', zIndex: 10 }}>
+
+                            {/* Left Panel: Text */}
                             <div
                                 style={{
-                                    position: 'absolute',
-                                    top: -50,
-                                    left: -60,
-                                    width: 120,
-                                    height: '140%',
-                                    backgroundColor: 'white',
-                                    transform: 'rotate(10deg)',
+                                    flex: '1.2',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    padding: '60px',
+                                    paddingRight: '20px',
                                 }}
-                            />
+                            >
+                                <div style={{ fontSize: 24, fontWeight: 'bold', color: '#64748b', marginBottom: 12, letterSpacing: '0.05em' }}>
+                                    あなたの性格タイプ
+                                </div>
+                                <div style={{ fontSize: 90, fontWeight: 900, color: '#1e293b', lineHeight: 1.1, marginBottom: 16 }}>
+                                    {uniData.name}
+                                </div>
+                                <div style={{ fontSize: 48, fontWeight: 'bold', color: '#94a3b8', marginBottom: 40 }}>
+                                    {type}
+                                </div>
 
-                            {/* Character Image */}
-                            <img
-                                src={characterImageUrl}
-                                alt={uniData.name}
+                                <div style={{ fontSize: 30, fontWeight: 'bold', color: '#334155', lineHeight: 1.5, marginBottom: 24 }}>
+                                    {uniData.stereotype}
+                                </div>
+
+                                {/* Tagline */}
+                                {descData?.tagline && (
+                                    <div style={{ fontSize: 24, color: '#64748b', marginTop: 10 }}>
+                                        {descData.tagline}
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Right Panel: Character ID Card */}
+                            <div
                                 style={{
-                                    width: '85%',
-                                    height: '85%',
-                                    objectFit: 'contain',
-                                    position: 'relative',
-                                    zIndex: 10,
+                                    flex: '1',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    padding: '40px',
                                 }}
-                            />
+                            >
+                                {/* ID Card Container */}
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        backgroundColor: 'white',
+                                        borderRadius: '40px',
+                                        padding: '30px',
+                                        boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+                                        transform: 'rotate(2deg)', // The "Student ID" tilt
+                                        width: '420px', // Fixed size constraints for typical OG
+                                        height: '520px',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        position: 'relative',
+                                    }}
+                                >
+                                    {/* Slot hint */}
+                                    <div
+                                        style={{
+                                            position: 'absolute',
+                                            top: 20,
+                                            left: '50%',
+                                            transform: 'translateX(-50%)',
+                                            width: 60,
+                                            height: 6,
+                                            backgroundColor: '#f1f5f9',
+                                            borderRadius: 999,
+                                        }}
+                                    />
+
+                                    <img
+                                        src={characterImageUrl}
+                                        alt={uniData.name}
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
+                                        }}
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
