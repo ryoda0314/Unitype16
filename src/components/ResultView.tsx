@@ -34,44 +34,43 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                     className="relative bg-white rounded-[3rem] shadow-2xl overflow-hidden"
                 >
                     {/* Colored Background Shape */}
-                    <div className={`absolute top-0 right-0 w-full md:w-2/3 h-full ${(uni as any).color || "bg-indigo-500"} opacity-10 md:opacity-100 md:[clip-path:polygon(20%_0%,_100%_0,_100%_100%,_0%_100%)] z-0`} />
-                    <div className={`absolute top-0 right-0 w-full h-1/2 md:hidden ${(uni as any).color || "bg-indigo-500"} opacity-20 z-0`} />
+                    <div className={`absolute top-0 right-0 w-[55%] md:w-2/3 h-full ${(uni as any).color || "bg-indigo-500"} [clip-path:polygon(20%_0%,_100%_0,_100%_100%,_0%_100%)] z-0`} />
 
-                    <div className="relative z-10 flex flex-col md:flex-row items-center">
+                    <div className="relative z-10 flex flex-row items-center">
 
                         {/* Left Panel: Text Content */}
-                        <div className="flex-1 p-8 md:p-16 space-y-6 text-center md:text-left">
-                            <div className="space-y-2">
-                                <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest">
+                        <div className="flex-1 py-8 pl-5 pr-2 md:p-16 space-y-3 md:space-y-6 text-left">
+                            <div className="space-y-1 md:space-y-2">
+                                <h4 className="text-[10px] md:text-sm font-bold text-slate-500 uppercase tracking-widest">
                                     あなたの性格タイプ
                                 </h4>
-                                <h1 className="text-5xl md:text-7xl font-black text-slate-800 tracking-tight">
+                                <h1 className="text-2xl md:text-7xl font-black text-slate-800 tracking-tight leading-tight">
                                     {uni?.name}
                                 </h1>
-                                <div className="text-2xl md:text-3xl font-bold text-slate-400">
+                                <div className="text-lg md:text-3xl font-bold text-slate-400">
                                     {typeCode}
                                 </div>
                             </div>
 
-                            <div className="pt-4 space-y-4">
-                                <p className="text-lg md:text-xl font-bold text-slate-700 leading-relaxed whitespace-pre-line">
+                            <div className="pt-2 md:pt-4 space-y-2 md:space-y-4">
+                                <p className="text-sm md:text-xl font-bold text-slate-700 leading-relaxed whitespace-pre-line">
                                     {(uni as any).stereotype}
                                 </p>
-                                <p className="text-slate-500 font-medium">
+                                <p className="text-[10px] md:text-base text-slate-500 font-medium">
                                     {uni?.desc}
                                 </p>
                             </div>
                         </div>
 
                         {/* Right Panel: Character Image */}
-                        <div className="flex-1 relative min-h-[300px] md:min-h-[500px] w-full flex items-center justify-center p-8">
+                        <div className="flex-1 relative min-h-[220px] md:min-h-[500px] w-full flex items-center justify-center p-2 md:p-8">
                             <motion.div
                                 initial={{ scale: 0.8, opacity: 0, rotate: -5 }}
                                 animate={{ scale: 1, opacity: 1, rotate: 0 }}
                                 transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
-                                className="relative bg-white p-6 md:p-8 rounded-[2.5rem] shadow-2xl rotate-2 max-w-sm md:max-w-md w-full"
+                                className="relative bg-white p-3 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] shadow-lg md:shadow-2xl rotate-2 max-w-[160px] md:max-w-md w-full aspect-[3/4]"
                             >
-                                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1.5 bg-slate-100 rounded-full" /> {/* Card slot hint */}
+                                <div className="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 w-8 md:w-16 h-1 md:h-1.5 bg-slate-100 rounded-full" /> {/* Card slot hint */}
                                 <img
                                     src={(uni as any).image}
                                     alt={uni?.name}
@@ -108,20 +107,20 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                 transition={{ duration: 0.8 }}
                 className="space-y-16"
             >
-                <div className="text-center space-y-4">
-                    <h2 className="text-3xl font-bold text-slate-900">性格特性の分析</h2>
+                <div className="text-center space-y-2 md:space-y-4">
+                    <h2 className="text-xl md:text-3xl font-bold text-slate-900">性格特性の分析</h2>
                     <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto" />
-                    <p className="text-slate-500 max-w-lg mx-auto leading-relaxed">
+                    <p className="text-xs md:text-base text-slate-500 max-w-lg mx-auto leading-relaxed">
                         あなたの意思決定や行動パターンを構成する4つの主要な軸を分析しました。
                     </p>
                 </div>
 
-                <div className="grid gap-6 bg-white rounded-[2.5rem] p-8 md:p-12 border border-slate-100 shadow-xl shadow-slate-200/40 relative overflow-hidden">
+                <div className="grid gap-6 bg-white rounded-[2rem] md:rounded-[2.5rem] p-5 md:p-12 border border-slate-100 shadow-xl shadow-slate-200/40 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-bl-full -z-10 opacity-50" />
-                    <div className="grid gap-12 max-w-3xl mx-auto w-full">
+                    <div className="grid gap-8 md:gap-12 max-w-3xl mx-auto w-full">
                         {/* Axis 1 */}
-                        <div className="space-y-8">
-                            <h3 className="text-lg font-bold text-slate-700 pl-2 border-l-4 border-indigo-400">
+                        <div className="space-y-4 md:space-y-8">
+                            <h3 className="text-sm md:text-lg font-bold text-slate-700 pl-2 border-l-2 md:border-l-4 border-indigo-400">
                                 軸1：達成目標
                             </h3>
                             <TraitBar
@@ -134,8 +133,8 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                         </div>
 
                         {/* Axis 2 */}
-                        <div className="space-y-8">
-                            <h3 className="text-lg font-bold text-slate-700 pl-2 border-l-4 border-emerald-400">
+                        <div className="space-y-4 md:space-y-8">
+                            <h3 className="text-sm md:text-lg font-bold text-slate-700 pl-2 border-l-2 md:border-l-4 border-emerald-400">
                                 軸2：制御焦点
                             </h3>
                             <TraitBar
@@ -148,8 +147,8 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                         </div>
 
                         {/* Axis 3 */}
-                        <div className="space-y-8">
-                            <h3 className="text-lg font-bold text-slate-700 pl-2 border-l-4 border-amber-400">
+                        <div className="space-y-4 md:space-y-8">
+                            <h3 className="text-sm md:text-lg font-bold text-slate-700 pl-2 border-l-2 md:border-l-4 border-amber-400">
                                 軸3：思考嗜好
                             </h3>
                             <TraitBar
@@ -162,8 +161,8 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                         </div>
 
                         {/* Axis 4 */}
-                        <div className="space-y-8">
-                            <h3 className="text-lg font-bold text-slate-700 pl-2 border-l-4 border-rose-400">
+                        <div className="space-y-4 md:space-y-8">
+                            <h3 className="text-sm md:text-lg font-bold text-slate-700 pl-2 border-l-2 md:border-l-4 border-rose-400">
                                 軸4：学習の回し方
                             </h3>
                             <TraitBar
@@ -193,32 +192,32 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                             alt="Relaxing"
                             className="absolute -top-32 -right-4 md:-right-12 w-32 md:w-48 opacity-90 rotate-3 z-10 drop-shadow-lg"
                         />
-                        <div className="bg-gradient-to-b from-white to-slate-50 rounded-[2.5rem] p-10 md:p-16 shadow-xl shadow-slate-200/50 border border-slate-100 relative overflow-hidden">
+                        <div className="bg-gradient-to-b from-white to-slate-50 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-16 shadow-xl shadow-slate-200/50 border border-slate-100 relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50/50 rounded-bl-full -z-10" />
 
                             <div className="text-center max-w-3xl mx-auto relative z-20">
-                                <h3 className="text-3xl font-bold text-slate-900 mb-8 leading-snug">{description.tagline}</h3>
+                                <h3 className="text-lg md:text-3xl font-bold text-slate-900 mb-6 md:mb-8 leading-snug">{description.tagline}</h3>
                                 <div className="relative">
-                                    <span className="absolute -top-6 -left-4 text-6xl text-indigo-100 font-serif">“</span>
-                                    <p className="text-xl text-slate-600 leading-relaxed italic relative z-10 px-8">
+                                    <span className="absolute -top-4 -left-2 md:-top-6 md:-left-4 text-4xl md:text-6xl text-indigo-100 font-serif">“</span>
+                                    <p className="text-sm md:text-xl text-slate-600 leading-relaxed italic relative z-10 px-4 md:px-8">
                                         {description.scene}
                                     </p>
-                                    <span className="absolute -bottom-12 -right-4 text-6xl text-indigo-100 font-serif">”</span>
+                                    <span className="absolute -bottom-8 -right-2 md:-bottom-12 md:-right-4 text-4xl md:text-6xl text-indigo-100 font-serif">”</span>
                                 </div>
                             </div>
 
-                            <div className="mt-16 pt-16 border-t border-slate-200/60 max-w-4xl mx-auto">
-                                <div className="text-center mb-10">
-                                    <h4 className="inline-block px-4 py-1.5 bg-slate-900 text-white rounded-full text-sm font-bold tracking-widest uppercase mb-4">Core Drivers</h4>
-                                    <h2 className="text-2xl font-bold text-slate-900">思考の原点</h2>
+                            <div className="mt-8 pt-8 md:mt-16 md:pt-16 border-t border-slate-200/60 max-w-4xl mx-auto">
+                                <div className="text-center mb-6 md:mb-10">
+                                    <h4 className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-slate-900 text-white rounded-full text-[10px] md:text-sm font-bold tracking-widest uppercase mb-2 md:mb-4">Core Drivers</h4>
+                                    <h2 className="text-lg md:text-2xl font-bold text-slate-900">思考の原点</h2>
                                 </div>
-                                <div className="grid md:grid-cols-2 gap-6">
+                                <div className="grid md:grid-cols-2 gap-3 md:gap-6">
                                     {description.coreAxis.map((axis, i) => (
-                                        <div key={i} className="flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                                            <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 text-indigo-600 font-bold border border-indigo-100">
+                                        <div key={i} className="flex items-start gap-3 md:gap-4 p-3 md:p-5 bg-white rounded-xl md:rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                                            <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 text-xs md:text-base text-indigo-600 font-bold border border-indigo-100">
                                                 {i + 1}
                                             </div>
-                                            <span className="text-slate-700 font-medium pt-1 leading-relaxed">{axis}</span>
+                                            <span className="text-xs md:text-base text-slate-700 font-medium pt-0.5 md:pt-1 leading-relaxed">{axis}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -235,40 +234,41 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                     {/* Content Grids */}
                     <div className="space-y-16">
                         {/* Row 1: Strengths & Weaknesses */}
-                        <div className="grid lg:grid-cols-2 gap-10">
+                        {/* Row 1: Strengths & Weaknesses */}
+                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 md:gap-10">
                             {/* Strength */}
-                            <div className="bg-emerald-50/30 rounded-[2rem] p-10 border border-emerald-100/60 relative overflow-hidden group hover:border-emerald-200 transition-colors">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-100/50 rounded-bl-[4rem] transition-transform group-hover:scale-110 duration-500" />
-                                <div className="flex items-center gap-6 mb-8">
-                                    <div className="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center p-3">
+                            <div className="bg-emerald-50/30 rounded-[1.5rem] md:rounded-[2rem] p-3 md:p-10 border border-emerald-100/60 relative overflow-hidden group hover:border-emerald-200 transition-colors">
+                                <div className="absolute top-0 right-0 w-16 h-16 md:w-32 md:h-32 bg-emerald-100/50 rounded-bl-[2rem] md:rounded-bl-[4rem] transition-transform group-hover:scale-110 duration-500" />
+                                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-6 mb-3 md:mb-8 text-center md:text-left">
+                                    <div className="w-8 h-8 md:w-20 md:h-20 bg-white rounded-full shadow-md flex items-center justify-center p-1.5 md:p-3 shrink-0">
                                         <img src="/assets/icons/icon_strength.png" alt="Strength Icon" className="w-full h-full object-contain" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-slate-900">強み・価値</h3>
+                                    <h3 className="text-xs md:text-2xl font-bold text-slate-900 leading-tight">強み・価値</h3>
                                 </div>
-                                <ul className="space-y-4">
+                                <ul className="space-y-2 md:space-y-4">
                                     {description.strengths.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-4 text-slate-700">
-                                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 shadow-sm shadow-emerald-200" />
-                                            <span className="text-lg font-medium leading-relaxed">{item}</span>
+                                        <li key={i} className="flex items-start gap-2 md:gap-4 text-slate-700">
+                                            <span className="mt-1.5 md:mt-2 w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-emerald-500 shrink-0 shadow-sm shadow-emerald-200" />
+                                            <span className="text-[10px] md:text-lg font-medium leading-relaxed">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
 
                             {/* Weakness */}
-                            <div className="bg-rose-50/30 rounded-[2rem] p-10 border border-rose-100/60 relative overflow-hidden group hover:border-rose-200 transition-colors">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-rose-100/50 rounded-bl-[4rem] transition-transform group-hover:scale-110 duration-500" />
-                                <div className="flex items-center gap-6 mb-8">
-                                    <div className="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center p-3">
+                            <div className="bg-rose-50/30 rounded-[1.5rem] md:rounded-[2rem] p-3 md:p-10 border border-rose-100/60 relative overflow-hidden group hover:border-rose-200 transition-colors">
+                                <div className="absolute top-0 right-0 w-16 h-16 md:w-32 md:h-32 bg-rose-100/50 rounded-bl-[2rem] md:rounded-bl-[4rem] transition-transform group-hover:scale-110 duration-500" />
+                                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-6 mb-3 md:mb-8 text-center md:text-left">
+                                    <div className="w-8 h-8 md:w-20 md:h-20 bg-white rounded-full shadow-md flex items-center justify-center p-1.5 md:p-3 shrink-0">
                                         <img src="/assets/icons/icon_weakness.png" alt="Weakness Icon" className="w-full h-full object-contain" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-slate-900">つまずきポイント</h3>
+                                    <h3 className="text-xs md:text-2xl font-bold text-slate-900 leading-tight">つまずき<br className="md:hidden" />ポイント</h3>
                                 </div>
-                                <ul className="space-y-4">
+                                <ul className="space-y-2 md:space-y-4">
                                     {description.weaknesses.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-4 text-slate-700">
-                                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0 shadow-sm shadow-rose-200" />
-                                            <span className="text-lg font-medium leading-relaxed">{item}</span>
+                                        <li key={i} className="flex items-start gap-2 md:gap-4 text-slate-700">
+                                            <span className="mt-1.5 md:mt-2 w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-rose-500 shrink-0 shadow-sm shadow-rose-200" />
+                                            <span className="text-[10px] md:text-lg font-medium leading-relaxed">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -276,36 +276,36 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                         </div>
 
                         {/* Row 2: Motivation & Stress */}
-                        <div className="grid lg:grid-cols-2 gap-10">
-                            <div className="bg-amber-50/30 rounded-[2rem] p-10 border border-amber-100/60 relative overflow-hidden">
-                                <div className="flex items-center gap-6 mb-8">
-                                    <div className="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center p-3">
+                        <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 md:gap-10">
+                            <div className="bg-amber-50/30 rounded-[1.5rem] md:rounded-[2rem] p-3 md:p-10 border border-amber-100/60 relative overflow-hidden">
+                                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-6 mb-3 md:mb-8 text-center md:text-left">
+                                    <div className="w-8 h-8 md:w-20 md:h-20 bg-white rounded-full shadow-md flex items-center justify-center p-1.5 md:p-3 shrink-0">
                                         <img src="/assets/icons/icon_motivation.png" alt="Motivation Icon" className="w-full h-full object-contain" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-slate-900">モチベーション</h3>
+                                    <h3 className="text-xs md:text-2xl font-bold text-slate-900 leading-tight">モチベーション</h3>
                                 </div>
-                                <ul className="space-y-4">
+                                <ul className="space-y-2 md:space-y-4">
                                     {description.motivation.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-4 text-slate-700">
-                                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
-                                            <span className="text-lg font-medium leading-relaxed">{item}</span>
+                                        <li key={i} className="flex items-start gap-2 md:gap-4 text-slate-700">
+                                            <span className="mt-1.5 md:mt-2 w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-amber-500 shrink-0" />
+                                            <span className="text-[10px] md:text-lg font-medium leading-relaxed">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
 
-                            <div className="bg-slate-100/50 rounded-[2rem] p-10 border border-slate-200/60 relative overflow-hidden">
-                                <div className="flex items-center gap-6 mb-8">
-                                    <div className="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center p-3">
+                            <div className="bg-slate-100/50 rounded-[1.5rem] md:rounded-[2rem] p-3 md:p-10 border border-slate-200/60 relative overflow-hidden">
+                                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-6 mb-3 md:mb-8 text-center md:text-left">
+                                    <div className="w-8 h-8 md:w-20 md:h-20 bg-white rounded-full shadow-md flex items-center justify-center p-1.5 md:p-3 shrink-0">
                                         <img src="/assets/icons/icon_stress.png" alt="Stress Icon" className="w-full h-full object-contain" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-slate-900">ストレス</h3>
+                                    <h3 className="text-xs md:text-2xl font-bold text-slate-900 leading-tight">ストレス</h3>
                                 </div>
-                                <ul className="space-y-4">
+                                <ul className="space-y-2 md:space-y-4">
                                     {description.stress.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-4 text-slate-700">
-                                            <div className="mt-2 w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0" />
-                                            <span className="text-lg font-medium leading-relaxed">{item}</span>
+                                        <li key={i} className="flex items-start gap-2 md:gap-4 text-slate-700">
+                                            <div className="mt-1.5 md:mt-2 w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-slate-400 shrink-0" />
+                                            <span className="text-[10px] md:text-lg font-medium leading-relaxed">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -314,18 +314,18 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                     </div>
 
                     {/* Relationships & Growth */}
-                    <div className="grid md:grid-cols-2 gap-10">
-                        <div className="bg-white rounded-[2rem] p-10 shadow-lg shadow-slate-100 border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
-                            <h3 className="text-2xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4">人間関係</h3>
-                            <p className="text-slate-600 leading-relaxed text-lg">{description.relationships}</p>
+                    <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 md:gap-10">
+                        <div className="bg-white rounded-[1.5rem] md:rounded-[2rem] p-3 md:p-10 shadow-lg shadow-slate-100 border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                            <h3 className="text-xs md:text-2xl font-bold text-slate-900 mb-3 md:mb-6 border-b border-slate-100 pb-2 md:pb-4">人間関係</h3>
+                            <p className="text-slate-600 leading-relaxed text-[10px] md:text-lg">{description.relationships}</p>
                         </div>
-                        <div className="bg-white rounded-[2rem] p-10 shadow-lg shadow-slate-100 border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
-                            <h3 className="text-2xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4">成長への一手</h3>
-                            <ul className="space-y-3">
+                        <div className="bg-white rounded-[1.5rem] md:rounded-[2rem] p-3 md:p-10 shadow-lg shadow-slate-100 border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                            <h3 className="text-xs md:text-2xl font-bold text-slate-900 mb-3 md:mb-6 border-b border-slate-100 pb-2 md:pb-4">成長への一手</h3>
+                            <ul className="space-y-1.5 md:space-y-3">
                                 {description.growth.map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-slate-600">
-                                        <span className="text-indigo-500 font-bold mt-0.5">→</span>
-                                        <span className="text-lg leading-relaxed">{item}</span>
+                                    <li key={i} className="flex items-start gap-1.5 md:gap-3 text-slate-600">
+                                        <span className="text-indigo-500 font-bold mt-0 text-[10px] md:text-base">→</span>
+                                        <span className="text-[10px] md:text-lg leading-relaxed">{item}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -333,11 +333,11 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                     </div>
 
                     {/* Memes */}
-                    <div className="text-center py-8">
-                        <p className="text-slate-400 text-sm font-bold tracking-widest uppercase mb-6">Common Phrasing</p>
-                        <div className="flex flex-wrap justify-center gap-4">
+                    <div className="text-center py-4 md:py-8">
+                        <p className="text-slate-400 text-[10px] md:text-sm font-bold tracking-widest uppercase mb-3 md:mb-6">Common Phrasing</p>
+                        <div className="flex flex-wrap justify-center gap-2 md:gap-4">
                             {description.memes.map((meme, i) => (
-                                <span key={i} className="px-6 py-3 bg-white rounded-full text-slate-600 font-bold shadow-sm border border-slate-200 hover:scale-105 transition-transform cursor-default">
+                                <span key={i} className="px-3 py-1.5 md:px-6 md:py-3 bg-white rounded-full text-slate-600 font-bold text-[10px] md:text-base shadow-sm border border-slate-200 hover:scale-105 transition-transform cursor-default">
                                     {meme}
                                 </span>
                             ))}

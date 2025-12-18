@@ -43,9 +43,9 @@ export function TraitBar({
         : labelRight.charAt(0);
 
     return (
-        <div className="w-full max-w-3xl mx-auto py-6">
+        <div className="w-full max-w-3xl mx-auto py-3 md:py-6">
             {/* Bar Track - Fully Colored */}
-            <div className={`relative h-3 md:h-4 ${barColor} rounded-full shadow-inner`}>
+            <div className={`relative h-2 md:h-4 ${barColor} rounded-full shadow-inner`}>
                 {/* Center Marker */}
                 <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-white/20 z-0 transform -translate-x-1/2" />
 
@@ -65,7 +65,7 @@ export function TraitBar({
                         transition={{ delay: 1.2, duration: 0.5 }}
                         className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 whitespace-nowrap flex flex-col items-center"
                     >
-                        <span className={`text-lg font-bold text-slate-700 drop-shadow-sm`}>
+                        <span className={`text-[10px] md:text-lg font-bold text-slate-700 drop-shadow-sm`}>
                             {dominantPct}% {dominantLabel.includes('：') ? dominantLabel.split('：')[1] : dominantLabel}
                         </span>
                         {/* Down Arrow/Caret */}
@@ -73,19 +73,18 @@ export function TraitBar({
                     </motion.div>
 
                     {/* Cursor Circle */}
-                    <div className="w-6 h-6 md:w-8 md:h-8 -ml-3 md:-ml-4 bg-white rounded-full border-4 border-slate-50 shadow-lg relative transform hover:scale-110 transition-transform">
+                    <div className="w-4 h-4 md:w-6 md:h-6 -ml-2 md:-ml-3 bg-white rounded-full border-2 md:border-4 border-slate-50 shadow-lg relative transform hover:scale-110 transition-transform">
                         {/* Inner dot for precision */}
-                        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full ${barColor} opacity-50`} />
+                        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 md:w-2 md:h-2 rounded-full ${barColor} opacity-50`} />
                     </div>
                 </motion.div>
             </div>
 
-            {/* Bottom Labels */}
             <div className="flex justify-between mt-2 px-1">
-                <span className={`text-xs font-bold uppercase tracking-wider ${isLeftDominant ? "text-slate-600" : "text-slate-400"}`}>
+                <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wider ${isLeftDominant ? "text-slate-600" : "text-slate-400"}`}>
                     {labelLeft.split('：')[0]}
                 </span>
-                <span className={`text-xs font-bold uppercase tracking-wider ${isRightDominant ? "text-slate-600" : "text-slate-400"}`}>
+                <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wider ${isRightDominant ? "text-slate-600" : "text-slate-400"}`}>
                     {labelRight.split('：')[0]}
                 </span>
             </div>
