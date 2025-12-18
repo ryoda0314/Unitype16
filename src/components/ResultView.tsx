@@ -346,24 +346,26 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
 
             {/* Compatibility Sections */}
             <div className="space-y-16">
-                <div className="text-center relative">
+                <div className="relative flex items-center justify-center gap-2 md:block md:text-center">
                     <img
                         src="/assets/illustration_chat.png"
                         alt="Campus Chat"
-                        className="absolute -top-20 left-4 md:left-20 w-28 md:w-40 -rotate-6 opacity-90 drop-shadow-lg"
+                        className="relative w-14 shrink-0 md:absolute md:w-40 md:-top-20 md:left-20 md:mb-0 -rotate-6 opacity-90 drop-shadow-lg"
                     />
-                    <h2 className="text-3xl font-bold text-slate-900 mb-4">相性分析</h2>
-                    <p className="text-slate-500">あなたと他のタイプとの化学反応</p>
+                    <div className="text-left md:text-center">
+                        <h2 className="text-xl md:text-3xl font-bold text-slate-900 mb-0 md:mb-4">相性分析</h2>
+                        <p className="text-[10px] md:text-base text-slate-500">あなたと他のタイプとの化学反応</p>
+                    </div>
                 </div>
 
-                <div className="grid xl:grid-cols-2 gap-12">
+                <div className="grid xl:grid-cols-2 gap-8 lg:gap-12">
                     {/* Compatible */}
-                    <div className="space-y-8">
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-2xl font-bold shadow-sm">✓</div>
-                            <h3 className="text-2xl font-bold text-slate-900">最高の相性</h3>
+                    <div className="space-y-4 md:space-y-8">
+                        <div className="flex items-center gap-2 md:gap-4 mb-3 md:mb-6">
+                            <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-lg md:text-2xl font-bold shadow-sm">✓</div>
+                            <h3 className="text-lg md:text-2xl font-bold text-slate-900">最高の相性</h3>
                         </div>
-                        <div className="grid gap-6">
+                        <div className="grid gap-3 md:gap-6">
                             {compatibility?.compatible?.map((item: any) => (
                                 <div key={item.type} className="transform hover:scale-[1.02] transition-transform duration-300">
                                     <CompatibilityCard
@@ -379,12 +381,12 @@ export function ResultView({ scores, onReset }: ResultViewProps) {
                     </div>
 
                     {/* Incompatible */}
-                    <div className="space-y-8">
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600 text-2xl font-bold shadow-sm">×</div>
-                            <h3 className="text-2xl font-bold text-slate-900">要注意な相性</h3>
+                    <div className="space-y-4 md:space-y-8">
+                        <div className="flex items-center gap-2 md:gap-4 mb-3 md:mb-6">
+                            <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600 text-lg md:text-2xl font-bold shadow-sm">×</div>
+                            <h3 className="text-lg md:text-2xl font-bold text-slate-900">要注意な相性</h3>
                         </div>
-                        <div className="grid gap-6">
+                        <div className="grid gap-3 md:gap-6">
                             {compatibility?.incompatible?.map((item: any) => (
                                 <div key={item.type} className="transform hover:scale-[1.02] transition-transform duration-300">
                                     <CompatibilityCard
