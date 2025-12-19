@@ -2,18 +2,24 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from 'next-intl';
 import { QuestionCard } from "@/components/QuestionCard";
 import { ResultView } from "@/components/ResultView";
 import { Header } from "@/components/Header";
 import { TypeLibraryModal } from "@/components/TypeLibraryModal";
 import { CompatibilityCheckerModal } from "@/components/CompatibilityCheckerModal";
+import { AboutModal } from "@/components/AboutModal";
+import { LeftSidebarAd, RightSidebarAd } from "@/components/AdBanner";
 import config from "@/data/config.json";
 import { calculateScores } from "@/data/scoring";
 
-const ITEMS_PER_STEP = 4;
+const ITEMS_PER_STEP = 6;
 const STORAGE_KEY = process.env.NEXT_PUBLIC_STORAGE_KEY || "unitype16_mvp_storage_v1";
 
 export default function Home() {
+  const t = useTranslations('common');
+  const tQ = useTranslations('questions');
+
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [showResult, setShowResult] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
@@ -24,13 +30,13 @@ export default function Home() {
   // Modal States
   const [isTypeLibraryOpen, setIsTypeLibraryOpen] = useState(false);
   const [isCompatibilityCheckOpen, setIsCompatibilityCheckOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   const totalSteps = Math.ceil(config.items.length / ITEMS_PER_STEP);
 
   // Initialize: Load from LocalStorage or Shuffle
   useEffect(() => {
     const loadState = () => {
-      console.log("[DEBUG] loadState() called");
       try {
         const savedData = localStorage.getItem(STORAGE_KEY);
 
@@ -46,7 +52,7 @@ export default function Home() {
               setRandomizedItems(orderedItems as typeof config.items);
               setAnswers(parsed.answers);
               setShowResult(parsed.showResult || false);
-              setHasStarted(parsed.hasStarted || false); // Restore started state
+              setHasStarted(parsed.hasStarted || false);
               setCurrentStep(parsed.currentStep || 0);
               setIsLoaded(true);
               return;
@@ -54,7 +60,7 @@ export default function Home() {
           }
         }
       } catch (e) {
-        console.error("[DEBUG] Error loading:", e);
+        console.error("Error loading:", e);
       }
 
       // Fallback: New Shuffle
@@ -135,7 +141,7 @@ export default function Home() {
   };
 
   const handleReset = () => {
-    if (confirm("診断をやり直しますか？")) {
+    if (confirm(t('result.retake') + '?')) {
       localStorage.removeItem(STORAGE_KEY);
       // Full Reset
       setAnswers({});
@@ -150,7 +156,7 @@ export default function Home() {
 
   const handleGoHome = () => {
     if (showResult || hasStarted) {
-      if (confirm("トップに戻りますか？現在の進捗は保存されますが、スタート画面に戻ります。")) {
+      if (confirm("Go back to the top?")) {
         setShowResult(false);
         setHasStarted(false);
         window.scrollTo(0, 0);
@@ -179,6 +185,7 @@ export default function Home() {
       <Header
         onOpenTypeLibrary={() => setIsTypeLibraryOpen(true)}
         onOpenCompatibility={() => setIsCompatibilityCheckOpen(true)}
+        onOpenAbout={() => setIsAboutOpen(true)}
         onGoHome={handleGoHome}
       />
 
@@ -190,6 +197,11 @@ export default function Home() {
       <CompatibilityCheckerModal
         isOpen={isCompatibilityCheckOpen}
         onClose={() => setIsCompatibilityCheckOpen(false)}
+      />
+
+      <AboutModal
+        isOpen={isAboutOpen}
+        onClose={() => setIsAboutOpen(false)}
       />
 
       <AnimatePresence mode="wait">
@@ -205,7 +217,6 @@ export default function Home() {
             <div className="max-w-4xl w-full flex flex-col items-center">
 
               <div className="mb-8 relative w-full max-w-lg aspect-video">
-                {/* Placeholder for Illustration - You need to add the image file */}
                 <img
                   src="/assets/illustration_study.png"
                   alt="University Life"
@@ -214,30 +225,28 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-800 mb-6 leading-tight">
-                “性格”で選ぶ、<br />
-                <span className="text-indigo-600">あなたの理想の大学</span>
+                {t('start.heroTitle1')}<br />
+                <span className="text-indigo-600">{t('start.heroTitle2')}</span>
               </h1>
 
               <p className="text-lg text-slate-600 mb-10 max-w-2xl leading-relaxed">
-                たった1分であなたの性格タイプを分析し、
-                相性の良い大学ラベル（旧帝大、早慶、MARCHなど）を診断します。
-                ありのままの自分で答えてください。
+                {t('start.heroDescription')}
               </p>
 
               <button
                 onClick={handleStart}
                 className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-indigo-600 rounded-full hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 shadow-lg hover:shadow-xl hover:-translate-y-1"
               >
-                診断スタート
+                {t('start.startButton')}
                 <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </button>
 
               <div className="mt-8 flex gap-8 text-sm text-slate-500 font-medium">
                 <span className="flex items-center gap-1">
-                  ⏱ 所要時間: 約1分
+                  ⏱ {t('start.duration')}
                 </span>
                 <span className="flex items-center gap-1">
-                  🔒 登録不要・無料
+                  🔒 {t('start.free')}
                 </span>
               </div>
 
@@ -250,12 +259,16 @@ export default function Home() {
           </main>
         ) : (
           /* QUIZ SCREEN */
-          <main className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8" key="quiz">
+          <main className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8 relative" key="quiz">
+            {/* Desktop Sidebar Ads */}
+            <LeftSidebarAd />
+            <RightSidebarAd />
+
             <div className="max-w-3xl mx-auto space-y-8">
               <div className="text-center mb-12">
-                <h1 className="text-3xl font-serif font-bold text-slate-800 tracking-wider">University Label Diagnosis</h1>
+                <h1 className="text-3xl font-serif font-bold text-slate-800 tracking-wider">{t('quiz.title')}</h1>
                 <p className="mt-2 text-gray-500 text-sm font-medium">
-                  {currentStep + 1} / {totalSteps} ステップ
+                  {currentStep + 1} / {totalSteps} {t('quiz.step')}
                 </p>
 
                 {/* Progress Bar */}
@@ -286,7 +299,7 @@ export default function Home() {
                       transition={{ delay: idx * 0.1 }}
                     >
                       <QuestionCard
-                        question={q.text}
+                        question={tQ(q.id)}
                         value={answers[q.id] !== undefined ? answers[q.id] + 1 : null}
                         onChange={(val) => handleAnswerChange(q.id, val)}
                       />
@@ -304,7 +317,7 @@ export default function Home() {
                     : "bg-white border-2 border-slate-200 text-slate-500 hover:bg-slate-50 hover:border-slate-300"
                     }`}
                 >
-                  戻る
+                  {t('quiz.back')}
                 </button>
 
                 {!isLastStep ? (
@@ -317,7 +330,7 @@ export default function Home() {
                       : "bg-slate-200 text-slate-400 cursor-not-allowed"
                       }`}
                   >
-                    次へ
+                    {t('quiz.next')}
                   </button>
                 ) : (
                   <button
@@ -331,7 +344,7 @@ export default function Home() {
                       : "bg-slate-200 text-slate-400 cursor-not-allowed"
                       }`}
                   >
-                    診断結果を見る
+                    {t('quiz.seeResult')}
                   </button>
                 )}
               </div>

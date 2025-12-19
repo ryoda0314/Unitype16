@@ -1,0 +1,126 @@
+{
+    "common": {
+        "appName": "UniType16",
+        "tagline": "大学ラベル診断",
+        "header": {
+            "typeLibrary": "タイプ一覧",
+            "compatibility": "相性診断"
+        },
+        "start": {
+            "heroTitle1": "「性格」で選ぶ、",
+            "heroTitle2": "あなたの理想の大学",
+            "heroDescription": "たった1分であなたの性格タイプを分析し、相性の良い大学ラベル（旧帝大、早慶、MARCHなど）を診断します。ありのままの自分で答えてください。",
+            "startButton": "診断スタート",
+            "duration": "所要時間: 約1分",
+            "free": "登録不要・無料"
+        },
+        "quiz": {
+            "title": "University Label Diagnosis",
+            "step": "ステップ",
+            "next": "次へ",
+            "back": "戻る",
+            "seeResult": "診断結果を見る"
+        },
+        "result": {
+            "yourType": "あなたの性格タイプ",
+            "shareOnX": "結果をXでシェア",
+            "traitAnalysis": "性格特性の分析",
+            "traitDescription": "あなたの意思決定や行動パターンを構成する4つの主要な軸を分析しました。",
+            "axis1": "軸1：達成目標",
+            "axis2": "軸2：制御焦点",
+            "axis3": "軸3：思考嗜好",
+            "axis4": "軸4：学習の回し方",
+            "coreDrivers": "思考の原点",
+            "strengths": "強み・価値",
+            "weaknesses": "つまずきポイント",
+            "motivation": "モチベーション",
+            "stress": "ストレス",
+            "relationships": "人間関係",
+            "growth": "成長への一手",
+            "commonPhrasing": "Common Phrasing",
+            "compatibilityAnalysis": "相性分析",
+            "compatibilityDescription": "あなたと他のタイプとの化学反応",
+            "bestCompatibility": "最高の相性",
+            "cautionCompatibility": "要注意な相性",
+            "retake": "もう一度診断する"
+        },
+        "scale": {
+            "stronglyDisagree": "強く反対",
+            "disagree": "そう思わない",
+            "somewhatDisagree": "やや反対",
+            "neutral": "どちらでもない",
+            "somewhatAgree": "やや賛成",
+            "agree": "そう思う",
+            "stronglyAgree": "強く賛成"
+        }
+    },
+    "questions": {
+        "MP1": "点数よりも、「分かった感」があると満足しがちだ。",
+        "MP14": "高得点でも、「なぜ解けたか」を説明できないと落ち着かないことが多い。",
+        "MP4": "順位や偏差値が上がると、やる気が一気に上がりがちだ。",
+        "MP6": "勉強では、「できる人に見えるか」を気にしがちだ。",
+        "MP19": "勉強は理解よりも、「点が取れる」を優先しがちだ。",
+        "MP21": "テスト前日、分かっていない所を最後まで潰す方だ。",
+        "AS3": "「当たればデカい」と思うと、動き出しが速くなりがちだ。",
+        "AS15": "確実じゃなくても、伸びしろが大きい方を選びがちだ。",
+        "AS4": "「ミスったらヤバい」が見えると、慎重になりがちだ。",
+        "AS14": "提出前は、やらかしチェックをしてから出しがちだ。",
+        "AS19": "挑戦より、「確実に取りにいく」方が合っていると感じがちだ。",
+        "AS21": "模試では、難問に突っ込んで点を伸ばしにいきがちだ。",
+        "CU1": "難しいほど、仕組みが腑に落ちるまで考えがちだ。",
+        "CU2": "用語やルールを自分の言葉で整理すると、理解が進みがちだ。",
+        "CU3": "理屈より先に、「使える形」にして進めがちだ。",
+        "CU6": "手を動かしながら、途中で分かったことを足していきがちだ。",
+        "CU19": "説明できなくても、「解ける／動く」形になればOKだと思いがちだ。",
+        "CU21": "新しい単元は、定義や前提から全体像を固める方だ。",
+        "IN1": "一人で黙々とやれる時間があると、調子が上がりがちだ。",
+        "IN3": "人に話す前に、頭の中で一回まとめがちだ。",
+        "IN2": "人と話したり場に出たりすると、元気が回復しがちだ。",
+        "IN14": "話しながら考える方が、結論まで早くなりがちだ。",
+        "IN19": "まとまってなくても、まず話し始めると整理できがちだ。",
+        "IN21": "新しいクラス初日、まず空気を見てから話しかける方だ。"
+    },
+    "axes": {
+        "MP": {
+            "left": "M（Mastery）：成長型",
+            "right": "P（Performance）：結果型"
+        },
+        "AS": {
+            "left": "A（Advance）：挑戦型",
+            "right": "S（Secure）：安全型"
+        },
+        "CU": {
+            "left": "C（Cognition）：深掘り型",
+            "right": "U（Utility）：実用型"
+        },
+        "IN": {
+            "left": "I（Internal）：自走型",
+            "right": "N（Network）：協力型"
+        }
+    },
+    "about": {
+        "title": "UniType16とは",
+        "intro": "UniType16は、あなたの「学び方・決め方・人との進め方」の傾向を、4つの軸で整理して言語化するセルフチェックです。いわゆる“性格診断”というより、日常の行動スタイルを「会話できる形」にまとめるためのツールとして設計しています。",
+        "axesTitle": "4つの軸",
+        "axis1name": "達成目標（Mastery / Performance）",
+        "axis1desc": "深く理解して伸びることを重視するか（Mastery）、成果・評価・勝ち筋を重視するか（Performance）",
+        "axis2name": "制御焦点（Advance / Secure）",
+        "axis2desc": "挑戦や獲得を優先するか（Advance）、安全策や失敗回避を優先するか（Secure）",
+        "axis3name": "思考嗜好（Cognition / Utility）",
+        "axis3desc": "原理や概念を掘るのが好きか（Cognition）、実用・最短ルートを好むか（Utility）",
+        "axis4name": "学習の回し方（Internal / Network）",
+        "axis4desc": "自走して整えながら進めるか（Internal）、環境・人の力を活用して進めるか（Network）",
+        "howToReadTitle": "結果の見方",
+        "howToReadDesc": "結果は「優劣」ではなく、状況によって出やすい“傾向”のスナップショットです。4文字コードは、あなたを決めつけるラベルではなく、得意な場面／つまずきやすい場面を整理するための略号として使ってください。",
+        "disclaimerTitle": "注意",
+        "disclaimerDesc": "UniType16は医療・臨床の診断や、採用・選抜などの高い利害が生じる意思決定を目的とした心理検査ではありません。自己理解やコミュニケーションの補助としてご利用ください。"
+    },
+    "cookie": {
+        "title": "Cookieの使用について",
+        "description": "本サイトでは、サービス向上のためにCookieを使用しています。「同意する」をクリックすると、以下の目的でCookieが使用されます。",
+        "analytics": "アクセス解析：サイトの利用状況の分析と改善",
+        "ads": "広告最適化：ユーザーの興味関心に基づいた広告の表示",
+        "accept": "同意する",
+        "decline": "拒否する"
+    }
+}

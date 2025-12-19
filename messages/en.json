@@ -1,0 +1,126 @@
+{
+    "common": {
+        "appName": "UniType16",
+        "tagline": "University Label Diagnosis",
+        "header": {
+            "typeLibrary": "Type Library",
+            "compatibility": "Compatibility"
+        },
+        "start": {
+            "heroTitle1": "Choose by Personality,",
+            "heroTitle2": "Your Ideal University",
+            "heroDescription": "In just 1 minute, we'll analyze your personality type and match you with compatible university labels (Ivy League, Oxbridge, etc.). Answer honestly!",
+            "startButton": "Start Diagnosis",
+            "duration": "Duration: ~1 min",
+            "free": "Free, No Sign-up"
+        },
+        "quiz": {
+            "title": "University Label Diagnosis",
+            "step": "Step",
+            "next": "Next",
+            "back": "Back",
+            "seeResult": "See Results"
+        },
+        "result": {
+            "yourType": "Your Personality Type",
+            "shareOnX": "Share on X",
+            "traitAnalysis": "Personality Trait Analysis",
+            "traitDescription": "We analyzed the 4 key axes that shape your decisions and behavioral patterns.",
+            "axis1": "Axis 1: Achievement Goal",
+            "axis2": "Axis 2: Control Focus",
+            "axis3": "Axis 3: Thinking Style",
+            "axis4": "Axis 4: Learning Approach",
+            "coreDrivers": "Core Drivers",
+            "strengths": "Strengths",
+            "weaknesses": "Stumbling Points",
+            "motivation": "Motivation",
+            "stress": "Stress Triggers",
+            "relationships": "Relationships",
+            "growth": "Growth Tips",
+            "commonPhrasing": "Common Phrasing",
+            "compatibilityAnalysis": "Compatibility Analysis",
+            "compatibilityDescription": "Your chemistry with other types",
+            "bestCompatibility": "Best Match",
+            "cautionCompatibility": "Caution Needed",
+            "retake": "Retake the Diagnosis"
+        },
+        "scale": {
+            "stronglyDisagree": "Strongly Disagree",
+            "disagree": "Disagree",
+            "somewhatDisagree": "Somewhat Disagree",
+            "neutral": "Neutral",
+            "somewhatAgree": "Somewhat Agree",
+            "agree": "Agree",
+            "stronglyAgree": "Strongly Agree"
+        }
+    },
+    "questions": {
+        "MP1": "I tend to feel satisfied when I have an 'aha!' moment, more than by high scores.",
+        "MP14": "Even with a high score, I often feel uneasy if I can't explain why I got it right.",
+        "MP4": "My motivation surges when my ranking or test scores improve.",
+        "MP6": "When studying, I tend to care about whether I look competent to others.",
+        "MP19": "I tend to prioritize 'getting points' over deep understanding.",
+        "MP21": "The night before a test, I'm the type to tackle topics I still don't understand.",
+        "AS3": "When I think 'the payoff could be huge,' I tend to act quickly.",
+        "AS15": "I tend to choose options with high potential, even if they're not guaranteed.",
+        "AS4": "When I see 'this could go badly,' I tend to become cautious.",
+        "AS14": "Before submitting, I tend to double-check for mistakes.",
+        "AS19": "I feel 'playing it safe' suits me better than taking risks.",
+        "AS21": "In practice tests, I tend to tackle hard problems to boost my score.",
+        "CU1": "The harder the topic, the more I tend to think until it truly makes sense.",
+        "CU2": "I tend to understand better when I rephrase terms and rules in my own words.",
+        "CU3": "I tend to make things 'usable' first, before fully understanding the theory.",
+        "CU6": "I tend to learn by doing, adding insights as I go.",
+        "CU19": "I tend to think it's OK if I can solve/make something work, even if I can't explain it.",
+        "CU21": "For new topics, I'm the type to first establish definitions and the big picture.",
+        "IN1": "I tend to perform better when I have quiet, solo time to focus.",
+        "IN3": "I tend to organize my thoughts before speaking to others.",
+        "IN2": "Interacting with people or being in a social setting tends to recharge me.",
+        "IN14": "I tend to reach conclusions faster when I think out loud with others.",
+        "IN19": "I tend to organize my thoughts better by just starting to talk, even if unpolished.",
+        "IN21": "On the first day of a new class, I tend to observe the atmosphere before approaching people."
+    },
+    "axes": {
+        "MP": {
+            "left": "M (Mastery): Growth-Oriented",
+            "right": "P (Performance): Results-Oriented"
+        },
+        "AS": {
+            "left": "A (Advance): Risk-Taking",
+            "right": "S (Secure): Safety-First"
+        },
+        "CU": {
+            "left": "C (Cognition): Deep-Dive",
+            "right": "U (Utility): Practical"
+        },
+        "IN": {
+            "left": "I (Internal): Self-Driven",
+            "right": "N (Network): Collaborative"
+        }
+    },
+    "about": {
+        "title": "About UniType16",
+        "intro": "UniType16 is a self-check tool that organizes and verbalizes your tendencies in 'how you learn, decide, and work with others' across 4 axes. Rather than a typical 'personality test,' it's designed to summarize your daily behavioral style into a conversational format.",
+        "axesTitle": "The 4 Axes",
+        "axis1name": "Achievement Goal (Mastery / Performance)",
+        "axis1desc": "Do you prioritize deep understanding and growth (Mastery), or results, evaluation, and winning strategies (Performance)?",
+        "axis2name": "Control Focus (Advance / Secure)",
+        "axis2desc": "Do you prioritize challenges and gains (Advance), or safety and avoiding failure (Secure)?",
+        "axis3name": "Thinking Style (Cognition / Utility)",
+        "axis3desc": "Do you prefer digging into principles and concepts (Cognition), or practical shortcuts (Utility)?",
+        "axis4name": "Learning Approach (Internal / Network)",
+        "axis4desc": "Do you progress by self-organizing (Internal), or by leveraging your environment and people (Network)?",
+        "howToReadTitle": "How to Read Results",
+        "howToReadDesc": "Results are not about 'better or worse' but a snapshot of tendencies that emerge in certain situations. Use the 4-letter code not as a label that defines you, but as shorthand for understanding your strengths and potential stumbling points.",
+        "disclaimerTitle": "Disclaimer",
+        "disclaimerDesc": "UniType16 is not a psychological assessment intended for medical/clinical diagnosis or high-stakes decisions like hiring. Please use it as a tool for self-understanding and communication."
+    },
+    "cookie": {
+        "title": "Cookie Usage",
+        "description": "This site uses cookies to improve our services. By clicking 'Accept', you agree to the following uses:",
+        "analytics": "Analytics: Understanding site usage to improve experience",
+        "ads": "Ad Optimization: Showing ads based on your interests",
+        "accept": "Accept",
+        "decline": "Decline"
+    }
+}

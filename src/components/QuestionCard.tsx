@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
 
 interface QuestionCardProps {
@@ -14,6 +15,8 @@ export function QuestionCard({
     value,
     onChange,
 }: QuestionCardProps) {
+    const t = useTranslations('common');
+
     // 16Personalities Style:
     // Left = Agree (Green)
     // Right = Disagree (Purple)
@@ -59,14 +62,14 @@ export function QuestionCard({
 
                 {/* Mobile Labels (Top) */}
                 <div className="flex justify-between w-full md:hidden px-4 text-xs font-bold uppercase tracking-wider">
-                    <span className="text-emerald-500">そう思う</span>
-                    <span className="text-purple-500">そう思わない</span>
+                    <span className="text-emerald-500">{t('scale.agree')}</span>
+                    <span className="text-purple-500">{t('scale.disagree')}</span>
                 </div>
 
                 <div className="flex items-center justify-center w-full relative">
                     {/* Desktop Label Left (Agree) */}
                     <span className="hidden md:block absolute left-0 text-emerald-500 font-bold text-sm tracking-wider mr-4">
-                        そう思う
+                        {t('scale.agree')}
                     </span>
 
                     {/* Circles Container */}
@@ -108,7 +111,7 @@ export function QuestionCard({
 
                     {/* Desktop Label Right (Disagree) */}
                     <span className="hidden md:block absolute right-0 text-purple-500 font-bold text-sm tracking-wider ml-4">
-                        そう思わない
+                        {t('scale.disagree')}
                     </span>
                 </div>
             </div>
