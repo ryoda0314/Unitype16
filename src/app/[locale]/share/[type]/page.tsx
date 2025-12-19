@@ -70,12 +70,6 @@ export default async function SharePage({ params }: Props) {
                         UniType<span className="text-indigo-600">16</span>
                     </span>
                 </Link>
-                <Link
-                    href="/"
-                    className="px-6 py-2 bg-indigo-600 text-white font-bold rounded-full shadow hover:bg-indigo-700 transition-colors"
-                >
-                    診断する
-                </Link>
             </header>
 
             <main className="max-w-4xl mx-auto py-12 px-6">
